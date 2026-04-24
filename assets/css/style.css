@@ -9,17 +9,17 @@
 }
 
 :root {
-  /* Paleta de Cores - Purple */
-  --purple-50: #f4eaff;
-  --purple-100: #e9dcfa;
-  --purple-200: #cdb3f0;
-  --purple-300: #b186e5;
-  --purple-400: #9460db;
-  --purple-500: #6b36c8;
-  --purple-600: #5b2ca0;
-  --purple-700: #4c2177;
-  --purple-800: #441f88;
-  --purple-900: #2a0e4d;
+  /* Paleta de Cores - rose */
+  --rose-50: #fee8fb;
+  --rose-100: #f7cdf6;
+  --rose-200: #f0b3de;
+  --rose-300: #e586cc;
+  --rose-400: #db60c4;
+  --rose-500: #c836a8;
+  --rose-600: #a02c8e;
+  --rose-700: #772163;
+  --rose-800: #881f75;
+  --rose-900: #4d0e3f;
 
   /* Cores Neutras */
   --gray-200: #e8e8e8;
@@ -70,7 +70,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--white);
+  background-color: var(--rose-50);
   line-height: 1.6;
   color: var(--black);
 }
@@ -106,28 +106,28 @@ main {
 
 /* Botão preenchido (primário) */
 .botao {
-  border-color: var(--purple-500);
-  background-color: var(--purple-500);
+  border-color: var(--rose-500);
+  background-color: var(--rose-500);
   color: var(--white);
 }
 
 .botao:hover {
-  border-color: var(--purple-800);
-  background-color: var(--purple-800);
+  border-color: var(--rose-800);
+  background-color: var(--rose-800);
   box-shadow: var(--shadow-md);
   transform: translateY(-0.25rem);
 }
 
 /* Botão outline (secundário) */
 .botao-outline {
-  border-color: var(--purple-500);
+  border-color: var(--rose-500);
   background-color: transparent;
-  color: var(--purple-500);
+  color: var(--rose-500);
 }
 
 .botao-outline:hover {
-  border-color: var(--purple-500);
-  background-color: var(--purple-500);
+  border-color: var(--rose-500);
+  background-color: var(--rose-500);
   color: var(--white);
   transform: translateY(-0.25rem);
 }
@@ -148,8 +148,8 @@ header {
   z-index: 1000;
   width: 100%;
   height: 5rem;
-  border-bottom: var(--spacing-xs) solid var(--gray-200);
-  background-color: var(--purple-800);
+  border-bottom: var(--spacing-xs) solid var(--rose-800);
+  background-color: var(--rose-800);
   box-shadow: var(--shadow-sm);
 }
 
@@ -160,7 +160,7 @@ header a {
 }
 
 header a:hover {
-  color: var(--purple-100);
+  color: var(--rose-100);
 }
 
 #titulo {
@@ -253,7 +253,7 @@ header a:hover {
   gap: var(--spacing-2xl);
   margin: var(--spacing-2xl) auto;
   border-radius: var(--radius-lg);
-  background-color: var(--gray-200);
+  background-color: var(--rose-100);
 }
 
 .about-image {
@@ -262,7 +262,7 @@ header a:hover {
 
 .about-image img {
   width: 100%;
-  border: 0.35rem solid var(--purple-500);
+  border: 0.35rem solid var(--rose-500);
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-lg);
 }
@@ -273,7 +273,7 @@ header a:hover {
   margin-bottom: var(--spacing-md);
   font-size: var(--text-3xl);
   font-weight: 700;
-  color: var(--purple-800);
+  color: var(--rose-800);
 }
 
 .about-content p {
@@ -309,7 +309,7 @@ header a:hover {
   font-size: var(--text-xl);
   font-weight: 700;
   text-align: center;
-  color: var(--purple-500);
+  color: var(--rose-500);
 }
 
 .data-label {
@@ -354,7 +354,7 @@ header a:hover {
   justify-content: center;
   width: 100%;
   height: 10rem;
-  background: linear-gradient(135deg, var(--purple-50) 0%, var(--purple-100) 100%);
+  background: linear-gradient(135deg, var(--rose-50) 0%, var(--rose-100) 100%);
 }
 
 .project-image img {
@@ -396,10 +396,10 @@ header a:hover {
 .tag {
   padding: 0.375rem 0.75rem;
   border-radius: var(--radius-sm);
-  background-color: var(--purple-100);
+  background-color: var(--rose-100);
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--purple-800);
+  color: var(--rose-800);
 }
 
 .project-buttons {
@@ -429,12 +429,12 @@ header a:hover {
 .swiper-button-next:after,
 .swiper-button-prev:after {
   font-size: var(--text-lg);
-  color: var(--purple-500);
+  color: var(--rose-500);
 }
 
 .swiper-button-next:hover:after,
 .swiper-button-prev:hover:after {
-  color: var(--purple-800);
+  color: var(--rose-800);
 }
 
 /* Indicadores de paginação */
@@ -448,7 +448,7 @@ header a:hover {
 .swiper-pagination-bullet-active {
   width: var(--spacing-lg);
   border-radius: var(--radius-sm);
-  background-color: var(--purple-500);
+  background-color: var(--rose-500);
 }
 
 .contact-container {
@@ -512,7 +512,7 @@ form input,
 form textarea {
   width: 100%;
   padding: 0.5rem var(--spacing-sm);
-  border: 0.25rem solid var(--gray-200);
+  border: 0.15rem solid var(--rose-500);
   border-radius: var(--radius-md);
   font-family: inherit;
   font-size: var(--text-base);
@@ -521,7 +521,7 @@ form textarea {
 
 form input:focus,
 form textarea:focus {
-  border-color: var(--purple-500);
+  border-color: var(--rose-500);
   outline: none;
 }
 
@@ -538,7 +538,7 @@ form span {
 
 footer {
   padding: 2.5rem;
-  background: linear-gradient(to right, var(--purple-500), var(--purple-800));
+  background: linear-gradient(to right, var(--rose-500), var(--rose-800));
   font-weight: 600;
   text-align: center;
   color: var(--white);
