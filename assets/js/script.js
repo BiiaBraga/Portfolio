@@ -410,7 +410,8 @@ form.addEventListener("submit", async event => {
     submitButton.textContent = "Enviando...";
 
     try {
-      const response = await fetch(form.action, {
+      const ajaxAction = form.action.replace("https://formsubmit.co/", "https://formsubmit.co/ajax/");
+      const response = await fetch(ajaxAction, {
         method: "POST",
         body: new FormData(form),
         headers: { Accept: "application/json" }
