@@ -1,114 +1,115 @@
-# Projeto Portfólio Pessoal
+# Portfolio Beatriz Braga Silva
 
----
+Portfolio pessoal desenvolvido com HTML, CSS e JavaScript para apresentar minha trajetoria, tecnologias, projetos e formas de contato em uma interface responsiva, delicada e interativa.
 
-<div align="center"> 
-	<img src="https://img.shields.io/badge/HTML-5-orange?style=for-the-badge&logo=html5" alt="HTML Badge" /> 
-	<img src="https://img.shields.io/badge/CSS-3-purple?style=for-the-badge&logo=css&logoColor=purple" alt="CSS Badge" /> 
-	<img src="https://img.shields.io/badge/JavaScript-ES6+-yellow?style=for-the-badge&logo=javascript&logoColor=yellow" alt="JavaScript Badge" /> 
+<div align="center">
+  <img src="https://img.shields.io/badge/HTML5-estrutura-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-estilo-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-interatividade-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111" alt="JavaScript">
 </div>
 
-<br />
+## Sobre
 
-O **Projeto Portfólio Pessoal** é um **site profissional moderno**, desenvolvido com **HTML, CSS e JavaScript**, com o objetivo de apresentar informações sobre a pessoa desenvolvedora, seus projetos e formas de contato de maneira clara, interativa e responsiva.
+O site foi criado para funcionar como uma experiencia unica de portfolio, com visual em tons pasteis, elementos decorativos, animacoes suaves e conteudo facil de atualizar.
 
-O projeto consome dados dinâmicos da **API do GitHub**, permitindo que informações como perfil e repositórios sejam carregadas automaticamente, mantendo o conteúdo sempre atualizado.
-
-------
+A secao de projetos consome a API publica do GitHub e exibe apenas os repositorios escolhidos para o portfolio. As tecnologias exibidas em cada projeto vem dos topics configurados em cada repositorio.
 
 ## Funcionalidades
 
-- Estrutura de páginas desenvolvida com **HTML semântico**
-- Estilização moderna com **CSS**, utilizando:
-  - Variáveis CSS
-  - Animações
-  - Layout responsivo (desktop, tablet e mobile)
-- Integração com a **API do GitHub** para:
-  - Exibição dinâmica das informações do perfil
-  - Listagem automática dos repositórios
-- Exibição dos projetos em **carrossel interativo** utilizando **Swiper.js**
-- **Formulário de contato com validação no frontend**, garantindo o correto preenchimento dos campos
-- Página dedicada de **confirmação de envio** do formulário
-- Navegação fluida com menu fixo e rolagem suave
-- Interface intuitiva e organizada, focada na experiência do usuário
+- Hero com apresentacao pessoal e foto
+- Secao "Sobre mim" com resumo, fatos e fotos
+- Livro de conquistas com paginacao interativa
+- Stack de tecnologias por categoria com barras animadas
+- Projetos carregados dinamicamente pelo GitHub
+- Carrossel horizontal de projetos com botoes e arraste
+- Cards de projetos com hover, icones, tags e links de codigo/demo
+- Formulario de contato com validacao no frontend
+- Pagina de sucesso personalizada apos envio da mensagem
+- Navbar fixa com destaque automatico da secao ativa
+- Layout responsivo para desktop, tablet e mobile
 
-------
+## Projetos exibidos
 
-## Estrutura do Projeto
+Atualmente o portfolio filtra estes repositorios do GitHub:
 
+- TrustWay
+- RHFlow
+- SafeLife
+- Blog-Pessoal
+- Yummy
+- Talksy
+- momoduo
+- chromatic
+
+Para alterar a lista, edite o array `featuredProjects` em `assets/js/script.js`.
+
+## Tecnologias dos projetos
+
+As tags dos cards de projeto sao puxadas dos topics de cada repositorio no GitHub.
+
+Para atualizar:
+
+1. Abra o repositorio no GitHub.
+2. Va em About.
+3. Edite os topics.
+4. Recarregue o portfolio.
+
+Exemplos de topics:
+
+`react`, `typescript`, `nodejs`, `nestjs`, `mysql`, `java`, `python`, `tailwind`, `springboot`
+
+## Estrutura
+
+```text
+Portfolio/
++-- index.html
++-- success.html
++-- README.md
++-- assets/
+    +-- Curriculo2026-versao2.pdf
+    +-- css/
+    |   +-- style.css
+    +-- js/
+    |   +-- script.js
+    +-- img/
+    |   +-- eu.png
+    |   +-- filhos.jpeg
+    |   +-- gatos.jpeg
+    |   +-- success.svg
+    +-- icons/
 ```
-portfolio/
-│
-├── index.html        # Página principal do portfólio
-├── success.html      # Página de confirmação de envio do formulário
-│
-├── assets/
-│   ├── css/
-│   │   └── styles.css    # Estilos e responsividade
-│   ├── js/
-│   │   └── scripts.js   # Integração com GitHub, carrossel e validações
-│   ├── img/             # Imagens e ilustrações
-│   └── icons/           # Ícones das linguagens e redes sociais
-│
-└── README.md
-```
 
-------
+## Como rodar localmente
 
-## Tecnologias Utilizadas
+Como o projeto e estatico, basta abrir o `index.html` no navegador.
 
-- **HTML5**: Estruturação semântica do conteúdo
-- **CSS3**: Estilização, layout responsivo e animações
-- **JavaScript (ES6+)**: Interatividade, consumo de APIs e validações
-- **Swiper.js**: Carrossel de projetos responsivo
-- **Fom Submit:** Serviço de envio de e-mails via formulário HTML
-- **GitHub API**: Fonte dinâmica de dados do perfil e repositórios
+Recomendado para testar chamadas externas e formulario:
 
-------
+1. Abra a pasta no VS Code.
+2. Use a extensao Live Server.
+3. Abra `index.html` com "Open with Live Server".
 
-## Executando Localmente
+## Formulario de contato
 
-Para executar o projeto em ambiente local, siga os passos abaixo.
+O formulario usa o FormSubmit para enviar mensagens.
 
-### Pré-requisitos
-
-- [Visual Studio Code](https://code.visualstudio.com/) (ou outro editor de sua preferência)
-- Extensão **Live Server** instalada no VS Code
-
-### Passos
-
-1. Clone o repositório:
-
-   ```bash
-   git clone https://github.com/BiiaBraga/Portfolio.git
-   ```
-
-2. Acesse a pasta do projeto:
-
-   ```bash
-   cd Portfolio
-   ```
-
-3. Abra o projeto no Visual Studio Code:
-
-   ```bash
-   code .
-   ```
-
-4. Abra o arquivo `index.html`, clique com o botão direito e selecione **"Open with Live Server"**.
-
-O site será aberto no navegador e todas as alterações poderão ser visualizadas em tempo real.
-
-------
+O envio esta configurado no atributo `action` do formulario em `index.html`. A pagina de retorno e `success.html`, preenchida dinamicamente pelo JavaScript para funcionar tanto localmente quanto no GitHub Pages.
 
 ## Deploy
 
-Este site está disponível publicamente através do **GitHub Pages**. Você pode acessar a versão online pelo link abaixo:
+O portfolio pode ser publicado pelo GitHub Pages.
 
-🔗 https://BiiaBraga.github.io/Portfolio
+URL do projeto:
 
-------
+```text
+https://BiiaBraga.github.io/Portfolio
+```
 
-## Contribuições
+Depois de alterar arquivos, publique as mudancas no GitHub para atualizar a versao online.
 
-Contribuições são bem-vindas. Caso tenha sugestões de melhorias, correções ou novas funcionalidades, sinta-se à vontade para abrir uma **issue** ou enviar um **pull request**.
+## Autora
+
+Desenvolvido com carinho por Beatriz Braga Silva.
+
+- GitHub: <https://github.com/BiiaBraga>
+- LinkedIn: <https://www.linkedin.com/in/beatriz-braga-silva/>

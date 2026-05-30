@@ -563,17 +563,25 @@ header {
 
 .cat-polaroids {
   position: relative;
-  min-height: 390px;
+  min-height: 430px;
 }
 
 .polaroid {
   position: absolute;
-  width: 310px;
+  width: 330px;
   padding: 16px 16px 22px;
   border-radius: 27px 27px 18px 18px;
   background: #fff;
   box-shadow: var(--shadow-sticker);
   text-align: center;
+}
+
+.polaroid-one {
+  z-index: 1;
+}
+
+.polaroid-two {
+  z-index: 2;
 }
 
 .polaroid img {
@@ -592,15 +600,15 @@ header {
 }
 
 .polaroid-one {
-  top: 8px;
-  left: 40px;
+  top: 0;
+  left: 0;
   transform: rotate(-5deg);
 }
 
 .polaroid-two {
-  right: 4px;
-  bottom: 0;
-  transform: rotate(7deg);
+  right: -52px;
+  bottom: -20px;
+  transform: rotate(6deg);
 }
 
 .about-content p {
