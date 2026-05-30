@@ -367,7 +367,7 @@ document.querySelectorAll("[data-project]").forEach(button => {
   });
 });
 
-form.addEventListener("submit", event => {
+form.addEventListener("submit", async event => {
   event.preventDefault();
   document.querySelectorAll("form span").forEach(span => span.textContent = "");
 
@@ -401,9 +401,28 @@ form.addEventListener("submit", event => {
   }
 
   if (valid) {
-    const basePath = window.location.pathname.replace(/[^/]*$/, "");
-    formNext.value = `${window.location.origin}${basePath}success.html`;
-    form.submit();
+    const successUrl = new URL("success.html", window.location.href).href;
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+
+    formNext.value = successUrl;
+    submitButton.disabled = true;
+    submitButton.textContent = "Enviando...";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      });
+
+      if (!response.ok) throw new Error("FormSubmit error");
+      window.location.href = successUrl;
+    } catch (error) {
+      document.querySelector("#erro-mensagem").textContent = "Nao consegui enviar agora. Tente novamente em alguns instantes.";
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
+    }
   }
 });
 
