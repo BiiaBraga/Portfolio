@@ -29,13 +29,19 @@
   <header>
     <nav class="menu-content" aria-label="Menu principal">
       <a href="#hero" id="titulo"><span class="titulo-icon">♥</span> Bia</a>
-      <ul class="menu-list">
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-list">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="menu-list" id="menu-list">
         <li><a href="#hero" class="active">Início</a></li>
         <li><a href="#about">Sobre</a></li>
         <li><a href="#diary">Diário</a></li>
         <li><a href="#stack">Stack</a></li>
         <li><a href="#projects">Projetos</a></li>
         <li><a href="#contact">Contato</a></li>
+        <li class="menu-close-item"><button class="menu-close" type="button">Fechar X</button></li>
       </ul>
     </nav>
   </header>
@@ -183,7 +189,7 @@
       <div class="stack-tabs" role="tablist" aria-label="Categorias de tecnologias">
         <button class="tab active" type="button" data-stack="backend">🌸 Backend</button>
         <button class="tab" type="button" data-stack="frontend">🌷 Frontend</button>
-        <button class="tab" type="button" data-stack="database">▣ Banco de Dados</button>
+        <button class="tab" type="button" data-stack="database">💾 Banco de Dados</button>
         <button class="tab" type="button" data-stack="languages">📚 Linguagens & Estudos</button>
       </div>
 

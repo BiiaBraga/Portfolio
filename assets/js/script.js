@@ -15,6 +15,9 @@ const diaryDate = document.querySelector("#diary-date");
 const book = document.querySelector(".book");
 const projectTrack = document.querySelector(".project-track");
 const stackSection = document.querySelector(".stack-container");
+const diaryMobileQuery = window.matchMedia("(max-width: 760px)");
+const menuToggle = document.querySelector(".menu-toggle");
+const menuClose = document.querySelector(".menu-close");
 
 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const githubUser = "BiiaBraga";
@@ -276,6 +279,16 @@ function renderDiarySide(side, entry) {
 }
 
 function setDiary(index) {
+  if (diaryMobileQuery.matches) {
+    const totalPages = diaryEntries.length;
+    currentDiary = ((index % totalPages) + totalPages) % totalPages;
+    diaryPage.textContent = currentDiary + 1;
+    diaryLeftCover.hidden = true;
+    diaryLeftStory.hidden = true;
+    renderDiarySide("right", diaryEntries[currentDiary]);
+    return;
+  }
+
   currentDiary = getDiarySpreadIndex(index);
   const isCoverSpread = currentDiary === 0;
   const leftEntry = getDiaryPage(currentDiary);
@@ -299,7 +312,7 @@ function turnDiary(direction) {
   book.classList.add("turning");
 
   window.setTimeout(() => {
-    setDiary(currentDiary + direction * 2);
+    setDiary(currentDiary + direction * (diaryMobileQuery.matches ? 1 : 2));
   }, 330);
 
   window.setTimeout(() => {
@@ -307,6 +320,8 @@ function turnDiary(direction) {
     diaryAnimating = false;
   }, 720);
 }
+
+diaryMobileQuery.addEventListener("change", () => setDiary(currentDiary));
 
 function updateProgress() {
   const scrollTop = window.scrollY;
@@ -333,6 +348,25 @@ function updateActiveLink() {
     link.classList.toggle("active", link.getAttribute("href") === `#${current.id}`);
   });
 }
+
+function setMenuOpen(isOpen) {
+  document.body.classList.toggle("menu-open", isOpen);
+  menuToggle?.setAttribute("aria-expanded", String(isOpen));
+}
+
+menuToggle?.addEventListener("click", () => {
+  setMenuOpen(!document.body.classList.contains("menu-open"));
+});
+
+menuClose?.addEventListener("click", () => {
+  setMenuOpen(false);
+});
+
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    setMenuOpen(false);
+  });
+});
 
 document.querySelectorAll(".tab").forEach(tab => {
   tab.addEventListener("click", () => {
