@@ -392,11 +392,36 @@ document.querySelectorAll("[data-diary]").forEach(button => {
   });
 });
 
+function getCenteredProjectIndex(cards) {
+  const trackRect = projectTrack.getBoundingClientRect();
+  const trackCenter = trackRect.left + trackRect.width / 2;
+
+  return cards.reduce((closest, card, index) => {
+    const cardRect = card.getBoundingClientRect();
+    const cardCenter = cardRect.left + cardRect.width / 2;
+    const distance = Math.abs(cardCenter - trackCenter);
+    return distance < closest.distance ? { index, distance } : closest;
+  }, { index: 0, distance: Infinity }).index;
+}
+
 document.querySelectorAll("[data-project]").forEach(button => {
   button.addEventListener("click", () => {
-    projectTrack.scrollBy({
-      left: button.dataset.project === "next" ? 360 : -360,
-      behavior: "smooth"
+    const cards = [...projectTrack.querySelectorAll(".project-card")];
+    if (!cards.length) return;
+
+    const direction = button.dataset.project === "next" ? 1 : -1;
+    const currentIndex = getCenteredProjectIndex(cards);
+    const targetIndex = Math.min(Math.max(currentIndex + direction, 0), cards.length - 1);
+    const targetCard = cards[targetIndex];
+    const trackRect = projectTrack.getBoundingClientRect();
+    const cardRect = targetCard.getBoundingClientRect();
+    const targetLeft = projectTrack.scrollLeft
+      + (cardRect.left - trackRect.left)
+      - (trackRect.width - cardRect.width) / 2;
+
+    projectTrack.scrollTo({
+      left: targetLeft,
+      behavior: "smooth",
     });
   });
 });

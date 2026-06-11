@@ -2067,10 +2067,13 @@ footer strong {
   .project-track {
     gap: 18px;
     padding: 10px 0 18px;
+    scroll-padding-inline: 0;
   }
 
   .project-card {
-    flex-basis: 100%;
+    flex-basis: calc(100% - 28px);
+    margin-inline: 14px;
+    scroll-snap-align: center;
     border-radius: 24px;
   }
 
